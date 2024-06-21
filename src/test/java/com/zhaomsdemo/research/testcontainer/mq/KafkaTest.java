@@ -30,14 +30,12 @@ public class KafkaTest {
 
     @DynamicPropertySource
     public static void registryProperties(DynamicPropertyRegistry registry) {
-
         kafkaContainer.start();
         registry.add("spring.kafka.bootstrap-servers", kafkaContainer::getBootstrapServers);
     }
 
     @Test
-    public void testProductAndConsumeMessage() {
-
+    public void testProductMessage() {
         kafkaTemplate.send("my-topic", "my-key", "my-value");
     }
 

@@ -5,3 +5,6 @@ spring:
   kafka:
     consumer:
       group-id: my-group
+  pulsar:
+    client:
+      service-url: pulsar:// localhost:6650
